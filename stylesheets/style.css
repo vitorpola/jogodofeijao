@@ -1,0 +1,250 @@
+@import 'https://fonts.googleapis.com/css?family=Baloo+Tamma';
+body{
+    background: #90a4ae;
+    background: url('../images/jelly-bean-background.png');
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+}
+
+.footer-copyright{
+    display: none;
+}
+
+.logo{
+    font-family: 'Baloo Tamma', cursive;
+    text-align: center;
+}
+
+.logo::after{
+    content: 'Jogo do Feijão';
+    position: relative;
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+}
+
+.bemvindo{
+    background-color: #4527a0;
+    color: #fff;
+    margin-top: 22%;
+}
+
+.bemvindo h3{
+    text-align: center;
+}
+
+.bemvindo .btn{
+    background-color: #ff6d00;
+}
+
+.contador{
+    height: 60px;
+    width: 60px;
+    border: 8px #4527a0 double;
+    border-radius:80px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: #fff;
+    z-index: 9999;
+    text-align: center;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.4);
+    padding: 7px 2px;
+    display: none;
+}
+
+.contador span{
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 2px;
+    position: relative;
+}
+
+.feijao{
+    height: 35px;
+    width: 25px;
+    background: #795548; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#795548, #805a4d, #b38d80); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#795548, #805a4d, #b38d80); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#795548, #805a4d, #b38d80); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#795548, #805a4d, #b38d80); /* Standard syntax */
+    border-radius: 15px 30px 30px 15px;
+    box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.4);
+    position: absolute;
+}
+
+.feijao:nth-of-type(odd){
+    transform: rotate(10deg);
+}
+.feijao:nth-of-type(even){
+    transform: rotate(120deg);
+}
+
+.feijao::after{
+    content: '';
+    position: absolute;
+    height: 9px;
+    width: 5px;
+    background-color: #ccc;
+    margin-top: 14px;
+    margin-left: 2px;
+    border-radius: 100%;
+}
+
+.feijao.jogador{
+    position: relative;
+    top: auto;
+    left: auto;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: -8px;
+    transform: rotate(0deg)
+}
+
+.card h5{
+    text-align: center;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.card h4{
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+.card.grupo{
+    cursor: pointer;
+    height: 200px;  
+    display: none;
+}
+
+.card.grupo:hover{
+    top: -1px;
+    background-color: #ede7f6;
+    transition: all  .25s;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 5;
+}
+
+.card.grupo:hover h5{
+    color: #4527a0;
+}
+
+.card.player{
+    background-color: #283593;
+    min-height: 97px;
+    display: none;
+    padding: 10px 20px;
+}
+
+.card.player img{
+    position: relative;
+    float: left;
+}
+
+.card.card.player h4{
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+.card.player span{
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #ff6d00 ;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin: 0 0 0 10px; 
+    display: none;
+    float: left;
+}
+
+.modal{
+    text-align: center;
+}
+
+.modal h4, .modal p,.modal span#numero{
+    color: #fff;
+}
+
+.modal .btn.seta{
+    position: relative;
+    width: 100%;
+    padding: 0px 5px;
+    background-color: #fff; 
+}
+
+.modal span#numero{
+    padding: 20px 20px;
+    font-size: 4rem;
+}
+
+.modal .btn#btn-fechar{
+    background-color: #ff6d00;
+}
+
+.modal.vencedor h2, .modal.vencedor h1{
+    font-size: 3rem;
+}
+
+.modal.regras{
+    color: #fff;
+    background-color: #283593;
+}
+
+.modal.regras p{
+    text-align: left;
+    font-weight: 600;
+}
+
+.modal.regras ul li{
+    text-align: left;
+    list-style: square;
+    margin-left: 16px;
+}
+
+.modal.retira{
+    background-color: #e65100;   
+}
+
+.modal.retira .card{
+    background-color: #ef6c00
+}
+
+
+.modal.vencedor{
+    background-color: #ff6d00;
+    color: #fff;
+}
+
+.modal.vencedor .card{
+    background-color: #283593;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .feijao{
+        height: 26px;
+        width: 20px;
+    }
+
+    .feijao::after{
+        height: 9px;
+        width: 4px;
+        margin-top: 8px;
+    }
+
+    .modal h4{
+        font-size: 1.8em;
+    }
+
+    .modal.vencedor h2, .modal.vencedor h1{
+         font-size: 1.8rem;
+    }
+
+
+
+}

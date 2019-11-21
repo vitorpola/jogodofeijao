@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo do Feijão</title>
+    <link rel="stylesheet" href="stylesheets/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="card col l6 offset-l3 m8 offset-m2 s12 bemvindo">
+                <p class="logo"></p>
+                <div class="container">
+                    <div class="row">
+                        <form>
+                            <div class="input-field col s12 m6 l6">
+                                <input placeholder="Jogador 1" id="nome_j1" type="text" ">
+                                
+                            </div>
+                            <div class="input-field col s12 m6 l6">
+                                <input placeholder="Jogador 2" id="nome_j2" type="text">
+                                
+                            </div>
+                            <div class="switch col s12 center">
+                                <label>
+                                2 Jog. <img src="images/jogadores.svg" height="30" />
+                                <input type="checkbox" name="modo" id="modo-jogo"/>
+                                <span class="lever"></span>
+                                <img src="images/pc.svg" height="30"/> I.A.beta
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col s6 center">
+                        <a id="btn-regras" href="#" class="btn-flat">
+                            <i class="left"><img src="images/info.svg"/></i>
+                            <span>REGRAS</span>
+                        </a>
+                    </div>
+                    <div class="col s6 center">
+                        <a id="btn-comecar" href="#" class="btn">
+                            <i class="right"><img src="images/play.svg" /></i>
+                            <span>COMEÇAR</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contador">
+        <span/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="jogador1" class="card player col s12">
+                <img />
+                <h4></h4><span>é a sua vez</span><br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div id="g1" class="card grupo col s4">
+                <h5>Grupo 1</h5>
+            </div>
+            <div id="g2" class="card grupo col s4">
+                <h5>Grupo 2</h5>
+            </div>
+            <div id="g3" class="card grupo col s4">
+                <h5>Grupo 3</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div id="jogador2" class="card player col s12">
+                <img />
+                <h4></h4><span>é a sua vez</span><br><br>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-retira" class="modal retira">
+        <div class="modal-content">
+            <h4>Quantos feijões você quer retirar?</h4>
+            <p class="hide-on-med-and-down">Role o scroll do mouse para selecionar</p>
+            <div class="card">
+                <a href="#" id="btn-cima" class="btn seta">
+                    <img src="images/seta-cima.svg" />
+                </a>
+                <span id="numero"></span>
+                <a href="#" id="btn-baixo" class="btn seta">
+                    <img src="images/seta-baixo.svg" />
+                </a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" id="btn-retirar" class="btn left">RETIRAR</a>
+            <a href="#" id="btn-fechar" class="btn">FECHAR</a>
+        </div>
+    </div>
+
+    <div id="vencedor" class="modal vencedor">
+        <div class="modal-content ">
+            <h2>Resultado do Jogo:</h2>
+            <div class="card">
+                <h1></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="regras" class="modal regras">
+        <div class="modal-content">
+            <h4>Regras do Jogo</h4>
+            <p>O jogo consiste em 5 regras básicas:</p>
+            <ul>
+                <li>Disputado por 2 jogadores, divido em turnos.</li>
+                <li>O turno tem no máximo 120 segundos. Caso o tempo do turno estoure, o adversário é o VENCEDOR.</li>
+                <li>Cada jogador, em seu turno, pode pegar de 1 até TODOS feijões de UM dos grupos.</li>
+                <li>O jogador que ficar com o último feijão de todos, é o PERDEDOR. E, consequentemente, o outro é o VENCEDOR.</li>
+                <li>Caso os três grupos fiquem sem feijões, o jogo será considerado EMPATADO.</li>
+            </ul>
+            <h4>Divirta-se!</h4>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-copyright center">
+            © 2016 desenvolvido por Vitor Pola
+        </div>
+    </footer>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/materialize.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+</body>
+
+</html>
